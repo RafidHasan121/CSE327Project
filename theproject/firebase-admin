@@ -1,0 +1,7 @@
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import auth
+
+cred = credentials.Certificate("theproject\project-d4bf4-firebase-adminsdk-7esok-6ce306916e.json")
+default_app = firebase_admin.initialize_app(cred)
+auth.delete_user("VNok97Yx5UZvFPHhDstDhYyzpRg1")

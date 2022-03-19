@@ -1,0 +1,21 @@
+#sets admin for existing project in database
+
+import pyrebase
+
+config = {
+    'apiKey': "AIzaSyDr4jO2Gp7j0hsx5VLHDtdObBZp7XemTOs",
+    'authDomain': "project-d4bf4.firebaseapp.com",
+    'databaseURL': "https://project-d4bf4-default-rtdb.firebaseio.com",
+    'projectId': "project-d4bf4",
+    'storageBucket': "project-d4bf4.appspot.com",
+    'messagingSenderId': "145308609557",
+    'appId': "1:145308609557:web:f01d105775ec058187721c",
+    'measurementId': "G-7BENWP5SS7" }
+
+firebase = pyrebase.initialize_app(config)
+
+db = firebase.database()
+pyreauth = firebase.auth()
+pyrestorage = firebase.storage()
+x = {'password': 12345}
+db.child('admin').set(x)
