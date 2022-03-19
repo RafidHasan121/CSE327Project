@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>DOCUMENT DlGITIZATION SERVICE - SDS</title>
+	<style>
+		body {
+			padding: 30px;
+		}
+
+		.cover {
+			padding-right: 20px;
+			padding-top: 50px;
+		}
+
+		.cover * {
+
+			text-align: right;
+		}
+
+		@media print {
+			input#btnPrint {
+				display: none;
+			}
+		}
+
+
+		h1 {
+			font-size: 45px;
+		}
+
+		h2 {
+			font-size: 35px
+		}
+
+		h3 {
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 25px;
+		}
+
+		h5 {
+			font-size: 18px;
+		}
+
+		.toc_holder {
+			border-bottom: 2px dotted #333;
+			clear: both;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.toc_holder div:nth-child(1) {
+			display: inline-block;
+		}
+
+		.toc_holder div:nth-child(2) {
+			display: inline-block;
+			float: right;
+		}
+
+
+		.toc_sub {
+
+			display: block;
+			clear: both;
+			padding-left: 40px;
+			margin-bottom: 10px;
+		}
+
+		.new_page {
+			page-break-after: always;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="cover new_page" style="text-align: right; display: block;">
+		<h1>Software Design Specification</h1>
+		<h3>for</h3>
+		<h2>DOCUMENT DlGITIZATION SERVICE</h2>
+		<h4>Beta Version</h4>
+		<h4>Prepared by </h4>
+		<h4>Tinkerers</h4>
+		<h4>April 09,2021</h4>
+
+		<button id="btnPrint" style="margin-top: 20px; padding: 10px 20px" onclick="window.print()">Print</button>
+		<table style="width:60%" border="1">
+			<tr>
+				<th>Name</th>
+				<th>ID</th>
+				<th>Email</th>
+			</tr>
+			<tr>
+				<td>Rafid Hasan </td>
+				<td>1813379642 </td>
+				<td>rafid.hasan@northsouth.edu</td>
+			</tr>
+			<tr>
+				<td>Mainuzzaman Mahin </td>
+				<td>1812774042</td>
+				<td>mainuzzaman.mahin@northsouth.edu</td>
+			</tr>
+			<tr>
+				<td>Syeda Farida Nafisa
+
+				</td>
+				<td>1811774042</td>
+				<td>syeda.nafisa2018@northsouth.edu</td>
+				
+			</tr>
+			<tr>
+				<td>Humayra Khanam Sneha</td>
+				<td>1811176042</td>
+				<td>humayra.sneha@northsouth.edu</td>
+			</tr>
+			
+			</table>
+	</div>
+
+
+	<!-- end of cover page -->
+
+	<br />
+
+
+	<div class="table_of_contents new_page">
+
+
+		<h4>Table of Contents</h4>
+		<div class="toc_holder">
+			<div>Table of Contents</div>
+			<div>i</div>
+		</div>
+
+
+		<div class="toc_holder">
+			<div><a href="#1">1. Intrduction</a></div>
+			<div>3</div>
+		</div>
+
+		<div class="toc_holder">
+			<div><a href="#2">2. Document Convention</a></div>
+			<div>3</div>
+		</div>
+
+		<div class="toc_holder">
+			<div><a href="#3">3. Description of Design Components</a></div>
+			<div>3</div>
+		</div>
+			<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href="#3.1">3.1 Server Side</a></div>
+				<div>3</div>
+			</div></div>
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href="#3.2">3.2 Client Side</a></div>
+				<div>3</div>
+			</div></div>
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href="#3.3">3.3 Mobile</a></div>
+				<div>3</div>
+			</div></div>
+		
+			<div class="toc_holder">
+				<div><a href="#4">4. High Level Component Design</a></div>
+				<div>4</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#5">5. UML Class Diagrams</a></div>
+				<div>5</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#6">6. Sequence Diagrams</a></div>
+				<div>6</div>
+			</div>
+			<div class="toc_sub">
+				<div class="toc_holder">
+					<div><a href="#6.1">6.1 Log In</a></div>
+					<div>6</div>
+				</div></div>
+				<div class="toc_sub">
+					<div class="toc_holder">
+						<div><a href="#6.2">6.2 Upload Document</a></div>
+						<div>7</div>
+					</div></div>
+					<div class="toc_sub">
+						<div class="toc_holder">
+							<div><a href="#6.3">6.3 Edit Document</a></div>
+							<div>8</div>
+						</div></div>
+						<div class="toc_sub">
+							<div class="toc_holder">
+								<div><a href="#6.4">6.4 Notification</a></div>
+								<div>9</div>
+							</div></div>
+							<div class="toc_sub">
+								<div class="toc_holder">
+									<div><a href="#6.5">6.5 Create Group</a></div>
+									<div>10</div>
+								</div></div>
+								<div class="toc_sub">
+									<div class="toc_holder">
+										<div><a href="#6.6">6.6 Upload Date and Expiry Date</a></div>
+										<div>11</div>
+									</div></div>
+									<div class="toc_sub">
+										<div class="toc_holder">
+											<div><a href="#6.7">6.7 Reset Password</a></div>
+											<div>12</div>
+										</div></div>
+										<div class="toc_sub">
+											<div class="toc_holder">
+												<div><a href="#6.8">6.8 Upload Avatar</a></div>
+												<div>13</div>
+											</div></div>
+											<div class="toc_sub">
+												<div class="toc_holder">
+													<div><a href="#6.9">6.9 Public Folder</a></div>
+													<div>14</div>
+												</div></div>
+												<div class="toc_sub">
+													<div class="toc_holder">
+														<div><a href="#6.10">6.10 Private Folder</a></div>
+														<div>15</div>
+													</div></div>
+													<div class="toc_sub">
+														<div class="toc_holder">
+															<div><a href="#6.11">6.11 Account Create</a></div>
+															<div>16</div>
+														</div></div>
+														<div class="toc_sub">
+															<div class="toc_holder">
+																<div><a href="#6.12">6.12 Set Roles and Permission</a></div>
+																<div>17</div>
+															</div></div>
+															<div class="toc_sub">
+																<div class="toc_holder">
+																	<div><a href="#6.13">6.13 Deletetion</a></div>
+																	<div>18</div>
+																</div></div>
+																<div class="toc_sub">
+																	<div class="toc_holder">
+																		<div><a href="#6.14">6.14 Edit Password</a></div>
+																		<div>19</div>
+																	</div></div>
+
+																	<div class="toc_holder">
+																		<div><a href="#7">7. Implementation Plan</a></div>
+																		<div>20</div>
+																	</div>
+	</div>	
+	<div class="new_page">
+	<h3 id="1">1. Introduction</h3>
+	
+	<p>
+		The document contains specific information with the regular classes and functionality about the design of the application. The aim of this project is to digitize the existing documents/files via scanning. The converted digital format will be stored  into storage using a simple document system capable search and retrieval for attaching the same. The project is a government-based initiative. The project has a user management system while controlling their own and public documents in a digitalized form. Users have different ranking and control over the documents accordingly. This document digitization service will help employees and users to get information in a faster way. Being user friendly and efficient, this application will benefit the organization. this documentation system will provide a substantial service in further business strategies. It will help the Admin and the User to access the documentation easily and they can store those documents as per needed.
+	</p>
+
+	<h3 id="2">2. Document Convention</h3>
+	<p>
+		Web: Standard formats( HTML,CSS,bootstrap,python)
+
+	</p>
+	<p>Android: Standard formats (Android Studio, Kotlin)</p>
+	<h3 id="3">3. Description of Design Components</h3>
+	<h4 id="3.1">3.1 Server Side</h4>
+	<p>
+		For backend development Firebase and Django will be used. The firebase real-time database  will  store  the  user’s  information  (Username, Email, Password etc). And  also  the  other information about the documents and uploaded documents.	
+	</p>
+	<h4 id="3.2">3.2 Client Side</h4>
+	<p>
+		For  front end development we will use HTML, CSS, javascript, bootstraps etc to make the website faster and user friendly.	
+	</p>
+	<h4 id="3.3"> 3.3 Mobile</h4>
+	<p>
+		For mobile app we will use Kotlin and Android Studio to crate the android version. It will have similar features as the web one.
+	</p>
+	<p>Third party services: N/A</p>
+</div>
+<div class="new_page">
+		<h3 id="4">4.High level Component Design</h3>
+		<h5>User:
+		</h5>
+		<p>
+			Every user has one or more specific roles for their account. They can access the file they have uploaded which is only viewed by them in their specific account, access files according to their role and access all public files that are published. Google login, password recovery via admin, avatar for profile will be a feature.
+		</p>
+		<h5>Authentication:
+		</h5>
+		<p>
+			Account authentication is secured by the user. Users can recover password, use google login.  Only administrator level users will be able to create account, edit roles, delete accounts while also retaining highest class of editing access across all user files. 
+		</p>
+		<h5>User Management:
+		</h5>
+		<p>
+			User profile will have permission to edit their own uploaded documents and view public files. Files provided for specific roles can also be accessed. Only administrator level user will have permission for all access to all user files and user account modifications.
+		</p>
+		<h5>Document Management:
+		</h5>
+		<p>
+			Public and private repositories for document management. There are both public files for each user which will be accessible via roles and private files will be accessible to uploading user only. Document indexing, document archiving will be the features.
+		</p>
+		<h5>Notification Management:
+		</h5>
+		<p>
+			Files shared for public access and role specific access will be shown in an accessible notification tile which when clicked will show the uploaded document.
+		</p>
+		<h5>Search:
+		</h5>
+		<p>
+			Files can be searched via file name, indexing, upload date, uploader. Only accessible files will be shown in the search according to the user. Full freedom for searching across all available documents is only available for the administrator.
+		</p>
+	</div>
+	<div class="new_page">
+	<h3 id="5">5.UML Class Diagram</h3>
+		
+		    	
+                 <img src= "img/uml.png " >
+			      </img>
+
+	</div>			
+	<div class="new_page">		
+    <h3 id="6">6.Sequence Diagrams</h3> 
+    <h4 id="6.1">6.1 Log In</h4>
+	<img src= "img/login.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.2">6.2 Upload Document</h4>
+	<img src= "img/upload2.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.3">6.3 Edit Document </h4>
+	<img src= "img/edit2.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.4">6.4 Notification</h4>
+	<img src= "img/notification.png " >
+</img></div>
+<div class="new_page">
+	<h4 id="6.5">6.5 Create Groups</h4>
+	<img src= "img/Create_group.png "width="500" height="600" >
+</img></div>
+<div class="new_page">
+	<h4 id="6.6">6.6 Upload Date and Expiry Date</h4>
+	<img src= "img/exp1.png" width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.7">6.7 Reset Password</h4>
+	<img src= "img/reset2.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.8">6.8 Upload Avatar</h4>
+	<img src= "img/upload_avater.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.9">6.9 Public Folder</h4>
+	<img src= "img/public_folder.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.10">6.10 Private Folder</h4>
+	<img src= "img/private.png "width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.11">6.11 Account Create</h4>
+	<img src= "img/Account_creation.png " width="500" height="600" >
+</img></div>
+<div class="new_page">
+	<h4 id="6.12">6.12 Set Roles and Permission</h4>
+	<img src= "img/edit_role.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.13">6.13 Deletetion</h4>
+	<img src= "img/Delete_account.png " width="500" height="600">
+</img></div>
+<div class="new_page">
+	<h4 id="6.14">6.14 Edit Password</h4>
+	<img src= "img/Edit_Password.png " width="500" height="600">
+</img></div>
+
+<div class="new_page">
+    <h3 id="7">7.Implementation Plan</h3> 
+<p>
+	<h5>Web:</h5> We will be using HTML, CSS, and bootstraps for front-ends. For backends, we will be using Django and python. We will use firebase real-time database for storing data and also for necessary authentication. We will follow UML diagrams for each and every step towards making the web app.
+</p>
+<p><h5>Android:</h5> We will be using Android Studio. And the language that will be used for making the app is Kotlin. We will use firebase real-time database for storing data and also for necessary authentication like google sign in etc. We  will  follow  UML diagrams  for  each  and  every  step towards making the android app.</p>
+<p><h5>App Testing:</h5> We will test the app by making it run on various devices with different user Emails. We will make sure that it has the least bugs and it should be compatible with many users without getting crashed at the same time.</p>	
+</div>
+
+			   
+
+
+
+
+
+			
+
+
+
+
+
+
+
+</body>
+
+</html>

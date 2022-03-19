@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sidebar</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'public.css' %}">
+
+  <link rel="stylesheet" href="https:////cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+    $('#example').DataTable();
+} );
+  </script>
+
+
+</head>
+<body>
+{% csrf_token %}
+   <div class="wrap">
+
+    <div class="sidebar">
+       <h1>Dashboard</h1>
+      <ul>
+          <li><a href="{% url 'Dashboard' %}" ><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="{% url 'public' %}"><i class="fa fa-unlock"></i>Public</a></li>
+          <li><a href="#"><i class="fa fa-lock"></i>Private</a></li>
+          <li><a href="#"><i class="fa fa-users"></i>Group</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Logout</a></li>
+        </ul>
+    </div>
+
+  <section class="main">
+
+    <h3>Welcome User : Group Files</h3>
+
+    <table id="example" class="display" cellspacing="0" width="100" >
+    <thead>
+      <tr>
+        <th>File Name</th> 
+        <th>Uploader Name</th> 
+        <th>Upload Time</th> 
+        <th>Group Name</th>
+        <th>Download</th>
+        <th>View/Edit/Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Listing File</td>
+        <td>Rafid Hasan</td>
+        <td>25/04/2021</td>
+        <td>Xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Visting File</td>
+        <td>Syeda Nafisa</td>
+        <td>05/05/2021</td>
+        <td>Xamp</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Project</td>
+        <td>Rafid Hasan</td>
+        <td>29/04/2021</td>
+        <td>Public</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Side Works</td>
+        <td>KS Humayra</td>
+        <td>07/05/2021</td>
+        <td>Sider</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Activated</td>
+        <td>KS Humayra</td>
+        <td>10/04/2021</td>
+        <td>Private</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Existing</td>
+        <td>Syeda Nafisa</td>
+        <td>15/05/2021</td>
+        <td>Loader</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Archived</td>
+        <td>Syeda Nafisa</td>
+        <td>09/05/2021</td>
+        <td>Extrimist</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Received</td>
+        <td>Nabeel Mohammad</td>
+        <td>17/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Private</td>
+        <td>Rafid Hasan</td>
+        <td>18/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Holding</td>
+        <td>Syeda Nafisa</td>
+        <td>01/05/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Contractor</td>
+        <td>Nabeel Mohammad</td>
+        <td>04/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Contributor</td>
+        <td>KS Humayra</td>
+        <td>17/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Deleted</td>
+        <td>Chandler Bing</td>
+        <td>22/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Hosting SIte</td>
+        <td>Syeda Nafisa</td>
+        <td>08/05/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Project Camp</td>
+        <td>Rafid Hasan</td>
+        <td>19/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+      <tr>
+        <td>Side Screen</td>
+        <td>KS Humayra</td>
+        <td>17/04/2021</td>
+        <td>xyz</td>
+        <td><a href = "#">Download</a></td>
+        <td><a href = "#">Edit</a>/<a href = "#">View</a>/<a href = "#">Delete</a></td>
+      </tr>
+
+
+
+
+    </tbody>
+
+    
+
+  </section> 
+
+   </div>
+</body>
+</html>

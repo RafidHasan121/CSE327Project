@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% if msg %}
+<script> alert('{{ msg }}'); </script>
+{% endif %}
+{% load static %}
+  <meta charset="utf-8">
+  <title>Sidebar</title>
+  <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+   <div class="wrap">
+
+    <div class="sidebar">
+       <h1>Dashboard</h1>
+      <ul>
+        <li><a href="{% url 'adminhome' %}"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="{% url 'newacc' %}"><i class="fa fa-user"></i>Create User</a></li>
+        <li><a href="{% url 'editrole' %}"><i class="fa fa-users"></i>Edit User Role</a></li>
+        <li><a href="{% url 'newrole' %}"><i class="fa fa-user-plus"></i>Create Role</a></li>
+        <li><a href="{% url 'deleteacc' %}"><i class="fa fa-trash"></i>Delete Account</a></li>
+        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Logout</a></li>
+      </ul>
+    </div>
+
+    <section class="main">
+        <div class="row">
+          <div class="col-12 m-lg-3">
+            <h1 class="font-weight-bold">Welcome Admin!!</h1> 
+          </div>
+
+          <!--Cards Start-->
+          <div class="col-3 m-lg-3">
+            <div class="card text-white bg-primary mb-3">
+              <div class="card-header font-weight-bold">Total number of users</div>
+              <div class="card-body">
+                <h5 class="card-title">{{usercount}}</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3 m-lg-3">
+            <div class="card text-white bg-primary mb-3">
+              <div class="card-header font-weight-bold">Total created roles</div>
+              <div class="card-body">
+                <h5 class="card-title">{{rolecount}}</h5>
+              </div>
+            </div>
+          </div>
+          
+          <!--Cards End-->
+
+          <!--Password Set Start-->
+          <form method = "POST" action = "{% url 'adminpass'%}">
+          {% csrf_token %}
+            <div class="row">
+              <div class="col-12 m-lg-3">
+                <h1 class="font-weight-bold">Change Admin Password: </h1> 
+              </div>
+              <div class="col-12 mb-3">
+                <div class="form-group row">
+                  <div class="col-6 m-lg-3">
+                    <label for="" class="font-weight-bold">Old Password</label>
+                    <input type="password" class="form-control" name = "oldpass" placeholder="Old Password">
+                  </div>
+                  <div class="col-6 m-lg-3">
+                    <label for="" class="font-weight-bold">New Password</label>
+                    <input type="password" class="form-control" name = "newpass" placeholder="New Password">
+                  </div>
+                  <div class="col-6 m-lg-3">
+                    <button type = "submit" class="btn btn-success col-12">Update Password</button>
+                  </div>
+                </div>          
+              </div>
+            </div>
+          </form>
+          <!--Password Set End-->
+          
+          
+        </div>
+    </section> 
+
+   </div>
+</body>
+</html>

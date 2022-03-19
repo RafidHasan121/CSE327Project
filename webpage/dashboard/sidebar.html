@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% if msg %}
+      <script> alert('{{ msg }}'); </script>
+    {% endif %}
+    <meta charset="utf-8">
+    <title>Sidebar</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  </head>
+  <body>
+  {% csrf_token %}
+    <!--Sidebar Start-->
+    <div class="sidebar">
+        <h1>Dashboard</h1>
+        <ul>
+          <li><a href="{% url 'Dashboard' %}" ><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="{% url 'public' %}"><i class="fa fa-unlock"></i>Public</a></li>
+          <li><a href="{% url 'private' %}"><i class="fa fa-lock"></i>Private</a></li>
+          <li><a href="#"><i class="fa fa-users"></i>Group</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Logout</a></li>
+        </ul>
+    </div>
+    <!--Sidebar End-->
+
+    <!--Section 01 Start-->
+    <section class="Section01">
+      <form method ="POST">
+       {% csrf_token %} 
+        <div class="row">
+          <div class="col-12 m-lg-3">
+            <h1 class="font-weight-bold">Welcome {{nam}}</h1> 
+          </div>
+          <!--Upload Picture Start-->
+          <div class="col-12 mb-2">
+            <div class="form-group row">
+              <div class="col-12 m-lg-3">
+                <div class="col-12 mb-2">
+                  <label for="files">
+                    <input type="file" name="files[]" id="files" style="display:none;">
+                    <input type="hidden" name="url" id="url">
+                    <img height = "500" width = "500" src="{{dp}}"/>
+                    
+                  </label>                
+                </div>
+                <div class="col-3">  
+                <button type="button" onclick="uploadimage()"class="btn btn-primary">Upload</button>           
+                </div>
+
+
+                <div class="col-2 m-lg-3">
+                </div>
+              </div>
+            </div>        
+          </div>
+          <!--Upload Picture End-->  
+      </form>
+      <form method = "POST" action= "{% url 'upload' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+          <!--Document Upload Start-->     
+          <div class="col-12 mb-3">
+            <div class="form-group row">
+              <div class="col-3 m-lg-3">
+                  <h2 for="" class="font-weight-bold">Choose A Role:</h2>
+                  <!--DROPDOWN INPUT-->
+                  <select class="form-control" id="role-select" name= "filetype" >
+                    <option value="none">Please choose an option</option>
+                    <optgroup label="General">
+                      <option value="public">Public </option>
+                      <option value="private">Private </option>
+                    </optgroup>?
+                    <optgroup label="Role" id="customrole">
+                      {% for x in roles %}
+                      <option value="{{x}}">{{x}}</option>
+                      {% endfor %}
+                    </optgroup>
+                      
+                  </select>
+              </div>
+              <div class="col-3 m-lg-3">
+                <h2 for="" class="font-weight-bold">Document Upload</h2>
+                <input type="file" class="form-control" name = "doc" id="doc">
+                <input type="hidden" name="docurl" id="docurl">
+              </div>
+              <div class="form-group col-3 m-lg-3">
+                <h2 for="" class="font-weight-bold">File Name</h2>
+                <input type="text" name = "filename" class="form-control" id="filename">
+              </div>
+              <div class="col-1">
+                  <label for=""> </label>
+                  <button type="submit" class="btn btn-primary btn-placement">Upload</button>
+              </div>
+            </div>          
+          </div>
+          <!--Document Upload End-->
+        </form>
+    </section> 
+    <!--Section 01 End-->
+
+    <!--scripts Start-->
+      <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+      <script>
+        var firebaseConfig = {
+        apiKey: "AIzaSyDr4jO2Gp7j0hsx5VLHDtdObBZp7XemTOs",
+        authDomain: "project-d4bf4.firebaseapp.com",
+        databaseURL: "https://project-d4bf4-default-rtdb.firebaseio.com",
+        storageBucket: "project-d4bf4.appspot.com",
+        measurementId: "G-7BENWP5SS7", };
+        
+        firebase.initializeApp(firebaseConfig);
+        
+        <!-- WORKING UPLOAD FUNCTION FOR AVATAR, USE FOR OTHER UPLOADS CHANGING CHILD DIRECTORY -->
+        
+        function uploadimage(){
+          var storage = firebase.storage();
+          var file=document.getElementById("files").files[0];
+          var storageref=storage.ref();
+          var x = "{{lid|safe}}";
+          var y = x.concat(".jpg");
+          console.log(y);
+          var thisref=storageref.child("avatar").child(y).put(file);
+          thisref.on('state_changed',function(snapshot) {
+          console.log('Done');
+          
+          }, function(error) {
+          console.log('Error',error);
+          
+        }, function() {
+          // Uploaded completed successfully, now we can get the download URL
+          thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            console.log('File available at', downloadURL);
+            document.getElementById("url").value=downloadURL;
+            alert('uploaded successfully');
+          });
+        });
+        }
+        </script>
+    <!--scripts End-->
+  </body>
+</html>

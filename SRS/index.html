@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>DOCUMENT DlGITIZATION SERVICE -SRS</title>
+	<style>
+		body {
+			padding: 30px;
+		}
+
+		.cover {
+			padding-right: 20px;
+			padding-top: 50px;
+		}
+
+		.cover * {
+
+			text-align: right;
+		}
+
+		h1 {
+			font-size: 45px;
+		}
+
+		h2 {
+			font-size: 35px
+		}
+
+		h3 {
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 25px;
+		}
+
+		h5 {
+			font-size: 18px;
+		}
+
+		.toc_holder {
+			border-bottom: 2px dotted #333;
+			clear: both;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.toc_holder div:nth-child(1) {
+			display: inline-block;
+		}
+
+		.toc_holder div:nth-child(2) {
+			display: inline-block;
+			float: right;
+		}
+
+
+		.toc_sub {
+
+			display: block;
+			clear: both;
+			padding-left: 40px;
+			margin-bottom: 10px;
+		}
+
+		.new_page {
+			page-break-after: always;
+		}
+
+
+		@media print {
+			input#btnPrint {
+				display: none;
+				ß
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="cover new_page" style="text-align: right; display: block;">
+		<h1>Software Requirements Specification</h1>
+		<h3>for</h3>
+		<h2>DOCUMENT DlGITIZATION SERVICE</h2>
+		<h4>Beta Version</h4>
+		<h4>Prepared by </h4>
+		<h4>Group Name: Tinkerers</h4>
+		<h4>Date: 18.03.2021</h4>
+
+		<button id="btnPrint" style="margin-top: 20px; padding: 10px 20px" onclick="window.print()">Print</button>
+		<table style="width:60%" border="1">
+			<tr>
+				<th>Name</th>
+				<th>ID</th>
+				<th>Email</th>
+			</tr>
+			<tr>
+				<td>Rafid Hasan </td>
+				<td>1813379642 </td>
+				<td>rafid.hasan@northsouth.edu</td>
+			</tr>
+			<tr>
+				<td>Mainuzzaman Mahin </td>
+				<td>1812774042</td>
+				<td>mainuzzaman.mahin@northsouth.edu</td>
+			</tr>
+			<tr>
+				<td>Syeda Farida Nafisa
+
+				</td>
+				<td>1811774042</td>
+				<td>syeda.nafisa2018@northsouth.edu</td>
+				
+			</tr>
+			<tr>
+				<td>Humayra Khanam Sneha</td>
+				<td>1811176042</td>
+				<td>humayra.sneha@northsouth.edu</td>
+			</tr>
+			
+			</table>
+
+	</div>
+
+	<!-- end of cover page -->
+
+
+	<!-- start of table of contents -->
+
+	<br />
+
+
+	<div class="table_of_contents new_page">
+
+
+		<h4>Table of Contents</h4>
+		<div class="toc_holder">
+			<div>Table of Contents</div>
+			<div>i</div>
+		</div>
+
+
+		<div class="toc_holder">
+			<div><a href="#1">1. Intrduction</a></div>
+			<div>3</div>
+		</div>
+
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href="#1.1">1.1 Purpose</a></div>
+				<div>3</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#1.2">1.2 Document Conventions</a> </div>
+				<div>3</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#1.3">1.3 Intended Audience and Reading Suggestions</a> </div>
+				<div>3</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#1.4">1.4 Product Scope</a> </div>
+				<div>3</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#1.5">1.5 References</a> </div>
+				<div>3</div>
+			</div>
+		</div>
+
+		<div class="toc_holder">
+			<div><a href="#2">2. Overall Description</a></div>
+			<div>4</div>
+		</div>
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href="#2.1">2.1 Product Perspective</a> </div>
+				<div>4</div>
+			</div>
+			<div class="toc_holder">
+				<div><a href="#2.2">2.2 Product Functions</a></div>
+				<div>4</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#2.3">2.3 User Classes and Characteristics</a></div>
+				<div>4</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#2.4">2.4 Operating Environment </a></div>
+				<div>4</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#2.5">2.5 Design and Implementation Constraints</a> </div>
+				<div>5</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#2.6">2.6 User Documentation</a></div>
+				<div>5</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href="#2.7">2.7 Assumptions and Dependencies</a></div>
+				<div>5</div>
+			</div>
+		</div>
+
+		<div class="toc_holder">
+			<div><a href ="#3">3. External Interface Requirements</a> </div>
+			<div>5</div>
+		</div>
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href ="#3.1">3.1 User Interfaces</a> </div>
+				<div>5</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#3.2">3.2 Hardware Interfaces</a></div>
+				<div>5</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#3.3">3.3 Software Interfaces</a> </div>
+				<div>5</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#3.4">3.4 Communications Interfaces</a> </div>
+				<div>5</div>
+			</div>
+		</div>
+
+
+		<div class="toc_holder">
+			<div><a href ="#4">4. System Features</a> </div>
+			<div>6</div>
+		</div>
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href ="#4.1">4.1 UML Diagram </a></div>
+				<div>6</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#4.2">4.2 Use Case </a></div>
+				<div>7</div>
+			</div>
+
+			
+		</div>
+
+		<div class="toc_holder">
+			<div><a href ="#5">5. Other Nonfunctional Requirements </a></div>
+			<div>14</div>
+		</div>
+		<div class="toc_sub">
+			<div class="toc_holder">
+				<div><a href ="#5.1">5.1 Performance Requirements </a></div>
+				<div>14</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#5.2">5.2 Safety Requirements</a></div>
+				<div>14</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#5.3">5.3 Security Requirements</a></div>
+				<div>14</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#5.4">5.4 Software Quality Attributes</a></div>
+				<div>14</div>
+			</div>
+
+			<div class="toc_holder">
+				<div><a href ="#5.5">5.5 Business Rules</a></div>
+				<div>15</div>
+			</div>
+		</div>
+
+		<div class="toc_holder">
+			<div><a href ="#6">6. Other Requirements</a></div>
+			<div>15</div>
+		</div>
+
+		<div class="toc_holder">
+			<div><a href ="#6.1">Appendix A: Glossary</a></div>
+			<div>15</div>
+		</div>
+		<div class="toc_holder">
+			<div><a href ="#6.2">Appendix B: Analysis Models</a> </div>
+			<div>15</div>
+		</div>
+		<div class="toc_holder">
+			<div><a href ="#6.3">Appendix C: To Be Determined List</a> </div>
+			<div>15</div>
+		</div>
+	</div>
+
+
+	<div class="new_page">
+
+		<h3 id="1">1. Introduction</h3>
+		<h4 id="1.1">1.1 Purpose</h4>
+		<p>
+			The aim of this project is to digitize existing documents/files via scanning. The converted digital format will be stored into storage using a simple document system capable search and retrieval for attaching the same.
+		</p>
+
+		<h4 id="1.2">1.2 Document Conventions</h4>
+		<p>
+			The project is a government-based initiative. The project has a user management system while controlling their own and public documents in a digitalized form. Users have different ranking and control over the documents accordingly.
+		</p>
+
+		<h4 id="1.3">1.3 Intended Audience and Reading Suggestions </h4>
+		<p>This software is intended for:
+			<ul>
+			<li>developers who can modify the project and can add more features.</li>
+			<li>users such as employees, manager can read the document and can take part in editing the exiting document.</li> 
+			<li>administrator can overview the documents as well as can change as needed.</li> 
+			<li>to read the document, users have to log in. Some users can edit the document, if the user has specific role.</li>
+			
+		</ul></p>
+
+
+		<h4 id="1.4">1.4 Product Scope</h4>
+		<p>This document digitization service will help employees and users to get information in a faster way. Being user friendly and efficient, this application will benefit the organization. this documentation system will provide a substantial service in further business strategies</p>
+		<h4>1.5 References</h4>	
+		<p>Ref 1: Scrimba.com</p>
+		   <p>Ref 2: freeCodeCamp.org - YouTube
+			 </p>
+
+
+	</div>
+
+	<!-- Overall Description -->
+
+	<div class="new_page">
+		<h3 id="2">2. Overall Perspective</h3>
+		<h4 id="2.1">2.1 Product Perspective</h4>
+		<p>This program has many features which will help people to store their documents later they can restore their document as per needed. This will contain and store all the previous documents which was present in the file. People who have account in this can access the document and they can add, remove and edit information from this. User can create an account and from that they can access the document. Also, there will be multiple type of users as example: public and private.</p>
+		<h4 id="2.2">2.2 Product Functions</h4>
+		<p>The major functionalities of the system are described below:
+			<ul>
+				<li>Two types of Users Information: Official and Non-Official.</li>
+				<li>All users will have unique ID and password for logging on to the account's information.</li>
+				<li>Store Data and Access Documents: User can store Documents and if needed they can access the documents.</li>
+				<li>Search, Edit, Remove and Archive: User can search any specific documents by date or name. Document can be edited and if you want you can remove your Documents. After a specific period of time your document you be archived. </li>
+				<li>Hardware Accessibility: User can access their data from different platform like PCs, Laptops or even Smartphones. </li>
+				<li>Optimized Versions: Available in android version which user can use to access their files. </li>
+				<li>Scan and Read: This feature will help the user to scan and read the Document from it. </li>
+				<li>System Management: User will get a notification in the mail after Login. Accounts with 3 failed login attempts should block and User has to send a reset request to access the account.</li>
+				<li>The solution provides very simple and modified features which are very easy to view and operate various features</li>
+			</ul>
+		</p>
+		<h4 id="2.3">2.3 User Classes and Characteristics</h4>
+		<p>We can find various users for this system. People with different capabilities and authorizations can have access to this system Public/non-official user: Normal people can have an account and will have access of basic features of the system. Official / corporate user: Employees and managers are known as official user. They may have access to edit the documents. Admin user: People with highest authority belong to this sort of user. They have the power to make necessary changes. Software developers: Developers are capable of to make changes as per request of the authority. They can add features and extend projects source code
+		</p>
+
+		<h4 id="2.4">2.4 Operating Environment</h4>
+		<p>
+			This system should be able to run on Windows and Android.
+		</p>
+
+		<h4 id="2.5">2.5 Design and Implementation Constraints</h4>
+		<p>Design and Implementation Constraints This system is designed in Django framework with firebase database. The language constraint of this system is only English. The system is limited to HTTP/HTTPS protocols.
+		</p>
+		<h4 id="2.6">2.6 User Documentation</h4>
+		<p>The system is designed to be intuitive and user friendly. But if there are further queries, the user can go through the user manual and online video tutorials which will be provided later.</p>
+		
+		<h4 id="2.7">2.7 Assumptions and Dependencies</h4>
+		<p>The user must have proper knowledge about how to use the computer or mobile phone as well as to properly scan the documents for upload. The program requires to be working via online for OCR and uploading features. Document sharing functionalities also require internet connection.</p>
+	</div>
+
+	<!-- Interfaces -->
+
+	<div class="new_page">
+
+		<h3 id="3">3. External Interface Requirements</h3>
+
+		<h4 id="3.1">3.1 User Interfaces</h4>
+
+
+		<p>In this user interface, user will have a profile where he can have the access of the documents where he can view, edit and delete his documents. He will also have a notification bar where he can see the documents people are uploading throughout the time. He will also have the access to only view the document of the public folders documents. Lastly, he can also able to upload his documents. </p>
+
+
+		<h4 id="3.2">3.2 Hardware Interfaces</h4>
+
+		<p>For the hardware interface we will need to use the Android app. For Laptop or Computer, the version (works with a browser) will be [HTTP/HTTPS]</p>
+		<h4 id="3.3">3.3 Software Interfaces</h4>
+
+		<p>For the webpage version of the product, we are using HTML, CSS, JavaScript and Bootstrap. Our database is in Firebase. Python and Django are used for the backend. For making android version of this product, we will use Kotlin.</p>
+
+
+		<h4 id="3.4">3.4 Communications Interfaces</h4>
+
+		<p>We will use Email and Google login for user authentication. For communication protocols, HTTP or HTTPS will be used and JSON will bs used as Rest API. Since we are using Firebase for the database, passwords will be encrypted in Firebase. </p>
+		<img src="image/com.png" alt="Class Diagram User" width="700" height="500">
+
+
+	</div>
+
+	<!-- System Features -->
+
+	<div class="new_page">
+
+		<h3 id="4">4. System Features
+			<h4 id="4.1">4.1 UML Diagram:</h4>
+			<img src="image/user.png" alt="Class Diagram User" width="500" height="600">
+			<P STYLE="margin-left: 0.81in; margin-bottom: 0in">
+			<img src="image/admin.png" alt="Class Diagram System" width="500" height="600">
+			<!-----Table for use case----->
+			<h4 id="4.2">4.2 Use Case:</h4>
+				<h5>4.2.1 Use Case (login):</h5>
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Login</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin, User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin/user opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin/user puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+
+				</table>
+				<h5> 4.2.2 Use Case (Upload Document):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Upload Document</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>User opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>User puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The user selects the option “upload”
+
+						</td>
+						<td>System responses with a pop-up window where user can upload the document.
+
+
+
+						</td>
+					</tr>
+					<tr>
+						<td>The user chooses a file from a drive to upload
+
+						</td>
+						<td>System upload the file to the database
+
+						</td>
+					</tr>
+					
+					
+					</table>
+
+				<h5> 4.2.3 Use Case (Edit Document):</h5>
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Edit Document</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>User opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>User puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The user chose the option” edit”
+
+						</td>
+						<td>System responses with a pop-up window where the user can see a form to edit the specific file
+
+						</td>
+					</tr>
+					<tr>
+						<td>The user chooses the option “submit “to update the document
+
+						</td>
+						<td>System stores replace the old document with the updated one.
+
+						</td>
+					</tr>
+					
+					
+					</table>
+
+				<h5> 4.2.4 Use Case (Upload Date / Expiry date):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Upload date/Expiry Date</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>User opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>User puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The user selects the document
+
+						</td>
+						<td>System shows upload date and expiry date of the document</td>
+					</tr>
+					
+					</table>
+
+
+				<h5> 4.2.5 Use Case (Reset Password):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Reset Password</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>User opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>User puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The user selects the option” Reset password”</td>
+						<td>System opens a pop-up window containing a box</td>
+					</tr>
+					<tr>
+						<td>The user puts his email to get verification
+
+						</td>
+						<td>System send the password verification message to the email address</td>
+					</tr>
+					</table>
+
+				<h5> 4.2.6 Use Case (Public Folder):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Public Folder</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin, User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin/user opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin/user puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>Admin/User clicks on the public folder. </td>
+						<td>System responses with the page containing the public folder</td>
+					</tr>
+					<tr>
+						<td>Admin/User can view the documents available by clicking on the documents. </td>
+						<td>System responses by opening the documents.</td>
+					</tr>
+					</table>
+				<h5> 4.2.7 Use Case (Private Folder):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Private Folder</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin, User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin/user opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin/user puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>Admin/User clicks on the private folder. </td>
+						<td>System responses with the page containing the private folder</td>
+					</tr>
+					<tr>
+						<td>Admin/User sees the options “Edit, Delete, View” and selects any one of them. </td>
+						<td>System responses with the option that is chosen.</td>
+					</tr>
+					</table>
+				<h5> 4.2.8 Use Case (Notification):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Notification</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin, User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Secondary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin/user opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin/user puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>Admin/user sees the “notification” option and hold on that option </td>
+						<td>System responses with a window which can be scrolled down to show the unseen notifications.</td>
+					</tr>
+					</table>
+				<h5> 4.2.9 Use Case (Create Groups):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Create Groups</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin, User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Secondary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin/user opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin/user puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>Admin/user selects the option “Create Group” and click on it </td>
+						<td>System responses with create group page</td>
+					</tr>
+					<tr>
+						<td>Admin/user selects members from the list below and then selects the option “Create Group” </td>
+						<td>System responses by creating the group</td>
+					</tr>
+					<tr>
+						<td>Admin/user puts in the role of the group in option called” Name of Group” </td>
+						<td> System responses by naming the folder with the given name</td>
+					</tr>
+					</table>
+				<h5> 4.2.10 Use Case (Upload Avatar):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Upload Avatar</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin, User </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin/user opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin/user puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>Admin/user selects the option “Upload Avatar” </td>
+						<td>System responses with a pop-up with window</td>
+					</tr>
+					<tr>
+						<td>Admin/ user uploads a file and selects the option “Done”</td>
+						<td>System responses by uploading the avatar</td>
+					</tr>
+					
+					</table>
+				<h5> 4.2.11 Use Case (Account Create):</h5>
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Account Create</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The admin selects the option “Create New Account” </td>
+						<td>System responses with a page containing account creation</td>
+					</tr>
+					<tr>
+						<td>The admins put in the username, password, role and selects “Done”</td>
+						<td>System responses by creating the account.</td>
+					</tr>
+					
+					</table>
+				<h5> 4.2.12 Use Case (Edit Password):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Edit Password</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The admin selects the username and then selects the option “Edit Password” </td>
+						<td>System responses by opening the edit password page</td>
+					</tr>
+					<tr>
+						<td>The admin put in the new password and selects “DONE”</td>
+						<td>System responses by updating the password of the selected username.</td>
+					</tr>
+					
+					</table>
+				<h5> 4.2.13 Use Case (Set roles and permission):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Roles and Permission</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The admin can see a window where he/she can set roles as employee, manager, user and give permission</td>
+						<td>System shows a window that has list of roles and permission</td>
+					</tr>
+				
+					</table>
+				<h5> 4.2.14 Use Case (Delete Account):</h5>
+
+				<table style="width:40%" border="1">
+					<tr>
+						<th>Name</th>
+						<th>Delete Account</th>
+					</tr>
+					<tr>
+						<td>Actors </td>
+						<td>Admin </td>
+					</tr>
+					<tr>
+						<td>Type </td>
+						<td>Primary</td>
+					</tr>
+					</table>
+				<p> <center>Typical Courses of Events</center></p>
+				<table style="width:70%" border="1">
+					<tr>
+						<th>Actor Actions</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin opens the application/website </td>
+						<td>System responses with a login page </td>
+					</tr>
+					<tr>
+						<td>Admin puts ID and Password in order to login </td>
+						<td>System responses with a home page</td>
+					</tr>
+					<tr>
+						<td>The admin selects the option “Delete Account” </td>
+						<td>System responses with a new window showing a list of all accounts</td>
+					</tr>
+					<tr>
+						<td>The admin chooses an account from the list.</td>
+						<td>System shows the option “delete”</td>
+					</tr>
+					<tr>
+						<td>The admin clicks the button “Delete”</td>
+						<td>System deletes the account from the directory.</td>
+					</tr>
+					
+					</table>
+				
+
+	</div>
+
+
+	<!-- section 5.* -->
+
+
+	<div class="new_page">
+		<h3 id="5">5. Other Non-Functional Requirements</h3>
+		<h4 id="5.1"> 5.1 Perfomance Requirement</h4>
+		<p> This will help to understand the usability of the website and know about how it works. After signing in to the account the user has time to do the work he wants to do that. It will take time to upload the document.</p> 
+
+			<p>Response Time: For systems that have to support significant numbers of users the cost of response times delays can actually be measured in monetary terms and therefore can form part of trade-off studies between different architectures providing different levels of performance.
+			</p>
+
+
+		<h4 id="5.2">5.2 Safety Requirements</h4>
+		
+		<p>
+			System use shall not cause any harm to users. It will not break any political and government rule.
+We respect our user’s privacy and are committed to protecting their personal documents. Backup, recovery and business continuity should ensure adequate backup of data as may be required by their operations. Document should be backed up periodically. An offsite backup is necessary for recovery from major failures / disasters to ensure business continuity.
+
+		</p>
+
+		<h4 id="5.3">5.3 Security Requirement</h4>
+		<p>Unauthorized access to the system and its data is not allowed. System use secured database. Account ID and password (PIN) Requirements Sign-off Button and Failed Login Attempts.</p>
+
+
+		<h4 id="5.4">5.4 Software Quality Attributes</h4>
+		<ul>
+			<li>Adaptability: To adapt the way of the this works on different platforms.</li>
+			<li>Correctness: The application should be correct in terms of its functionality, calculations used internally and the navigation should be correct.</li>
+			<li>Flexibility: Should be flexible enough to modify. Adaptable to other products with which it needs interaction. Should be easy to interface with other standard 3rd party components.</li>
+			<li>Interoperability: Interoperability of one system to another should be easy for the product to exchange data or services with other systems. Different system modules should work on different operating system platforms, different databases, and protocol conditions.</li>
+			<li>Maintainability: The maintainability of a software system depends on its: Readability, Extensibility and Testability.</li>
+			<li>Portability: This can be measured in terms of Costing issues related to porting, Technical issues related to porting, Behavioral issues related to porting.</li>
+			<li>Reliability: The behavior over time for the fulfillment of a given specification depends on the reliability of the software system. </li>
+			<li>Reusability: Software reuse is a good cost-efficient and time-saving development way. Different code library classes should be generic enough to use easily in different application modules. Dividing the application into different modules so that modules can be reused across the application.</li>
+			<li>Testability: The system should be easy to test and find defects. If required should be easy to divide into different modules for testing.</li>
+			<li>Usability: This can be measured in terms of ease of use. The application should be user-friendly. Should be easy to learn. Navigation should be simple. The system must be:
+				<ul><li> Easy to use for input preparation, operation, and interpretation of the output.</li>
+				<li> Provide consistent user interface standards or conventions with our other frequently used systems.</li>
+				<li> Easy for new or infrequent users to learn to use the system.</li>
+		
+			</ul>	</li>
+		</ul>
+
+
+		<h4 id="5.5">5.5 Business Rules</h4>
+		<p>One user can have only one account. Users are not allowed to see other account's information unless that information is uploaded publicly. All search history will be saved and admin can see those.</p>
+	</div>
+
+
+
+	<!-- part 6 starts here !-->
+
+	<div class="new_page">
+
+		<h3 id="6"> 6. Other Requirements </h3>
+		<h4> Database : </h4>
+		<p> All the data will be stored in a relational database. </p>
+
+		<h4 id="6.1">Appendix A: Glossary </h4>
+		<table style="width:100%" border="1">
+			<tr>
+				<th>Term</th>
+				<th>Definition</th>
+			</tr>
+			<tr>
+				<td>Database </td>
+				<td>Collection of all the information monitored by this system. </td>
+			</tr>
+			<tr>
+				<td>User </td>
+				<td>A user of this web is in the database. </td>
+			</tr>
+			<tr>
+				<td>Admin </td>
+				<td>Admin is listed in this database.</td>
+			</tr>
+			<tr>
+				<td> Software Requirements Specification </td>
+				<td>A document that completely describes all of the functions of a proposed system and the constraints
+					under which it must operate. For example, this document.</td>
+			</tr>
+			<tr>
+				<td>Stakeholder </td>
+				<td>Any person with an interest in the project who is not a developer. </td>
+			</tr>
+			<tr>
+				<td>User Type </td>
+				<td>Public or Private </td>
+			</tr>
+			<tr>
+				<td>Dashboard </td>
+				<td>Where admin can monitor and check user's activity and user can see their uploaded documents.</td>
+			</tr>
+			
+		</table>
+		<h4 id="6.2">Appendix B: Analysis Models </h4>
+		<p>Not Available</p>
+		<h4 id="6.3">Appendix C: To Be Determined List </h4>
+		<p> If time favors us, we are planning to add more features. </p>
+
+	</div>
+
+
+</body>
+
+</html>
