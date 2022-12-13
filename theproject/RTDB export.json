@@ -1,0 +1,50 @@
+{
+  "admin" : {
+    "avatar" : 1,
+    "password" : "12345"
+  },
+  "files" : {
+    "employee" : {
+      "empfile1" : 0
+    },
+    "manager" : {
+      "mngfile" : 1
+    },
+    "private" : {
+      "lH72cLMHjMWIUE4U2aOc9dw8eDG2" : {
+        "privfile1" : 0
+      }
+    },
+    "public" : {
+      "lH72cLMHjMWIUE4U2aOc9dw8eDG2" : {
+        "pubfile1" : 0
+      }
+    }
+  },
+  "role" : {
+    "employee" : {
+      "STuhLrqC4kTUlzNyAG2ueOm2cWm1" : true,
+      "lH72cLMHjMWIUE4U2aOc9dw8eDG2" : true
+    },
+    "manager" : {
+      "lH72cLMHjMWIUE4U2aOc9dw8eDG2" : true
+    }
+  },
+  "user" : {
+    "STuhLrqC4kTUlzNyAG2ueOm2cWm1" : {
+      "avatar" : 0,
+      "name" : "Rafid Hasan",
+      "role" : {
+        "employee" : true
+      }
+    },
+    "lH72cLMHjMWIUE4U2aOc9dw8eDG2" : {
+      "avatar" : 0,
+      "name" : "Syeda Nafisa",
+      "role" : {
+        "employee" : true,
+        "manager" : true
+      }
+    }
+  }
+}
